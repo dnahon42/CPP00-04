@@ -6,7 +6,7 @@
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 11:00:44 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/19 17:19:21 by dnahon           ###   ########.fr       */
+/*   Updated: 2025/08/19 17:32:08 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void Contact::setDarkestsecret(const std::string &darkestsecret)
 	this->_darkestsecret = darkestsecret;
 }
 
-Phonebook::Phonebook()
+PhoneBook::PhoneBook()
 {
 	this->_index = 0;
 }
 
-void Phonebook::AddContact()
+void PhoneBook::AddContact()
 {
 	std::string variable;
 	int i = -1;
@@ -153,7 +153,7 @@ void Phonebook::AddContact()
 		_index++;
 }
 
-void Phonebook::SearchContact() const
+void PhoneBook::SearchContact() const
 {
 	int i = -1;
 	int index = 0;
@@ -225,7 +225,7 @@ void Phonebook::SearchContact() const
 
 int main()
 {
-	Phonebook pb;
+	PhoneBook pb;
 	std::string variable;
 
 	while (1)

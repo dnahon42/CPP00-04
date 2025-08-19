@@ -6,7 +6,7 @@
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 11:00:58 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/19 14:04:24 by dnahon           ###   ########.fr       */
+/*   Updated: 2025/08/19 17:31:38 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ class Contact
 
 };
 
-class Phonebook 
+class PhoneBook 
 {
 	private:
 	Contact _contacts[8];
     int _index;
 	
 	public:
-		Phonebook();
+		PhoneBook();
 		void AddContact();
 		void SearchContact() const;
 };
