@@ -6,7 +6,7 @@
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 11:00:44 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/19 17:32:08 by dnahon           ###   ########.fr       */
+/*   Updated: 2025/08/19 21:03:42 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,21 +195,20 @@ void PhoneBook::SearchContact() const
 		if (std::cin.eof())
 			exit(1);
 	}
-	i = -1;
-	while (variable[++i])
+	try
 	{
-		if (std::isdigit(variable[i]) == 0)
-		{
-			std::cout << "Invalid index" << std::endl;
-			std::cout << "Enter the index of the contact you want the info from : ";
-			std::getline(std::cin, variable);
-			if (std::cin.eof())
-				exit(1);
-			i = -1;
-			continue ;
-		}
+   		index = std::stoi(variable);
 	}
-	index = std::stoi(variable);
+	catch (const std::invalid_argument& e)
+	{
+    std::cout << "Invalid input: not a number" << std::endl;
+    return;
+	}
+	catch (const std::out_of_range& e)
+	{
+    std::cout << "Invalid input: number out of range" << std::endl;
+    return;
+	}
 	if (index >= 0 && index <= 7)
 	{
 		std::cout << "First Name : " << _contacts[index].getFirstname() << std::endl;
