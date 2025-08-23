@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 17:23:48 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/23 17:01:12 by dnahon           ###   ########.fr       */
+/*   Created: 2025/08/22 14:17:13 by dnahon            #+#    #+#             */
+/*   Updated: 2025/08/23 17:01:48 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <string>
+# include <iostream>
 
-int sedFile(std::string filename, std::string s1, std::string s2);
-void replaceString(std::string &newline, std::string &line, size_t &start, size_t &s1_pos, std::string &s1, std::string &s2);
-int verifInputFile(std::string filename);
+class Fixed
+{
+  private:
+	int _number;
+	static int const _bit = 8;
+
+  public:
+	Fixed(void);
+	Fixed(const Fixed &nb);
+	Fixed &operator=(const Fixed &other);
+	~Fixed(void);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+};
 
 #endif
