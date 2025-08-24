@@ -6,7 +6,7 @@
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 14:17:14 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/23 16:06:08 by dnahon           ###   ########.fr       */
+/*   Updated: 2025/08/24 15:41:17 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,9 +141,7 @@ Fixed &Fixed::operator++()
 
 Fixed Fixed::operator++(int nb)
 {
-	Fixed	number;
-
-	number = *this;
+	Fixed number(*this);
 	this->_number++;
 	return (number);
 }
@@ -156,8 +154,9 @@ Fixed &Fixed::operator--()
 
 Fixed Fixed::operator--(int nb)
 {
-	_number = this->_number - 1;
-	return (nb);
+	Fixed number(*this);
+	this->_number--;
+	return (number);
 }
 
 int Fixed::getRawBits() const
