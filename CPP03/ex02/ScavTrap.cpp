@@ -6,7 +6,7 @@
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 19:03:42 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/26 16:31:16 by dnahon           ###   ########.fr       */
+/*   Updated: 2025/08/26 19:33:22 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,16 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " + this->_name + " is now in Gatekeeper mode !" << std::endl;
+	static bool isGuarding = false;
+
+	if (isGuarding == false)
+	{
+		std::cout << "ScavTrap " + this->_name + " is now in Gatekeeper mode !" << std::endl;
+		isGuarding = true;
+		return ;
+	}
+	else
+		std::cout << "ScavTrap " + this->_name + " is already in Gatekeeper mode !" << std::endl;
 }
 
 void ScavTrap::attack(const std::string &target)
