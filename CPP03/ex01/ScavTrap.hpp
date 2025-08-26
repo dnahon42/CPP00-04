@@ -6,7 +6,7 @@
 /*   By: dnahon <dnahon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 18:54:57 by dnahon            #+#    #+#             */
-/*   Updated: 2025/08/25 19:13:01 by dnahon           ###   ########.fr       */
+/*   Updated: 2025/08/26 18:57:36 by dnahon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class ScavTrap : public ClapTrap
 	~ScavTrap(void);
 
 	ScavTrap &operator=(const ScavTrap &other);
-    
-    void guardGate();
+
+	void guardGate();
+	void attack(const std::string &target);
 };
 
 #endif
